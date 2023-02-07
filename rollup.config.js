@@ -5,7 +5,6 @@ import resolve from 'rollup-plugin-node-resolve'
 import common from 'rollup-plugin-commonjs'
 import rollupTypescript  from 'rollup-plugin-typescript'
 import polyfills from 'rollup-plugin-node-polyfills'
-import { terser } from 'rollup-plugin-terser'
 const pkg = require('./package.json')
 
 export default {

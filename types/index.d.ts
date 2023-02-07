@@ -35,6 +35,7 @@ declare class IQrCodeWithLogo {
   toCanvas(): Promise<any>;
   toImage(): Promise<any>;
   downloadImage(name: string): void;
+  getFile(name: string): void;
   getCanvas(): Promise<HTMLCanvasElement>
 }
 

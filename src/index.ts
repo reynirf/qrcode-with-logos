@@ -6,7 +6,7 @@
  */
 
 import { toCanvas } from "./toCanvas";
-import { toImage, saveImage } from "./toImage";
+import { toImage, saveImage, convertToFile } from "./toImage";
 import { BaseOptions } from "../types/index";
 import { version } from '../package.json';
 class QrCodeWithLogo {
@@ -41,6 +41,10 @@ class QrCodeWithLogo {
   public async downloadImage(name: string) {
     if (!this.ifImageCreated) await this.toImage()
     saveImage(this.option.image, name);
+  }
+  public async getFile(name: string) {
+    if (!this.ifImageCreated) await this.toImage()
+    return convertToFile(this.option.image, name);
   }
   public async getCanvas(): Promise<HTMLCanvasElement> {
     if (!this.ifCanvasDrawed) await this.toCanvas()
