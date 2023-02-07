@@ -42,7 +42,7 @@ class QrCodeWithLogo {
     if (!this.ifImageCreated) await this.toImage()
     saveImage(this.option.image, name);
   }
-  public async getFile(name: string) {
+  public async getFile(name: string): Promise<File> {
     if (!this.ifImageCreated) await this.toImage()
     return convertToFile(this.option.image, name);
   }
